@@ -1,0 +1,153 @@
+.container{
+    background-color:#f7f7f7;
+}
+p{
+    color: #ffb2b2;
+    color: #375b91;
+    border-bottom: 1px solid black;
+    padding-bottom: 15px;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.form-group{
+    background-color: white;
+    margin-bottom:20px;
+    padding: 0px 10px 20px 10px;
+    text-align: left;
+    width: 60%;
+    display: inline-block;
+}
+
+.header{
+    margin: 0px;
+    background-color: #355990;
+    
+    color: white;
+    font-size: 20px;
+}
+
+.btn{
+    padding: 15px;
+    border:none;
+    background-color:#ff8e1d;
+    color:white;
+    cursor:pointer;
+}
+
+.input-valid{
+    color: #006390;
+    padding: 5px;
+}
+
+.input-valid:focus {
+    outline-offset: none;
+}
+
+.select-valid{
+    padding:4px;
+}
+
+.label{
+    width: 100px;
+    display: inline-block;
+    margin-top:15px;
+    color: #00498494;
+}
+
+.btn-container{
+    text-align: center;
+}
+
+.form{
+    margin-top:20px;
+    text-align: center;
+}
+
+.form-control{
+    height: 50px;
+}
+
+.without::-webkit-datetime-edit-ampm-field {
+    display: none;
+  }
+
+  .invalid-user{
+    color: white;
+    background: #ffb2b2;
+    border: 1px solid #ffb2b2;
+    padding: 3px 12px 3px 12px;
+    margin-left: 25px;
+    margin-top: 21px;
+    font-size: 13px;
+  }
+
+  .invalid-user:before{
+    content: '';
+    border: 1px;
+    position: absolute;
+    height: 7px;
+    width: 7px;
+    background: #ffb2b2;
+    transform: rotate(45deg);
+    margin-left: -16px;
+    margin-top: 21px;
+  }
+
+  .success{
+    color: #42cc42;
+    font-size: 25px;
+    padding: 25px;
+    padding-bottom: 5px;
+  }
+
+  .success-container{
+    width: 60%;
+    margin: 30px;
+    margin-bottom: 10px;
+    background: #f0fcf3;
+    display: inline-block;
+    text-align: left;
+  }
+
+  .cont{
+      text-align: center;
+  }
+
+  .success-content{
+    padding: 5px 25px 25px 25px;
+    color: gray;
+  }
+
+  .btn-container{
+    display: inline-block;
+    text-align: left;
+    margin: 100px;
+    margin-top: 0px;
+    width: 60%;
+  }
+
+.has-error{
+    background: #ff980080;
+    cursor: not-allowed;
+}
+
+.long-input{
+    border:1px solid #b0c2ff;
+    width: 218px;
+}
+
+div>textarea.long-input{
+    color: #006390;
+    width: 224px;
+}
+
+select.long-input{
+    border-color: #babeff;
+    width: 230px;
+    color: #006390;
+}
+
+.small-input{
+    width: 50px;
+}
