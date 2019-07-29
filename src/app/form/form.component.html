@@ -1,0 +1,108 @@
+<div>
+<div  class="header">
+  <h1>New event</h1>
+</div>
+
+<div class="container" [hidden]="!submitted">
+<form required class="form" #Event = "ngForm" (ngSubmit)="newEvent(Event)">
+
+    <div class="form-group">
+      <p>About</p>
+      <div class="form-control">
+
+        <label class="label" for="title">*Title</label>
+        <input class="input-valid long-input" required ngModel name="title" #title="ngModel" id="title" type="text" placeholder="Make it short and clean"> 
+        <label *ngIf="title.invalid && title.touched" class="invalid-user"> Title cannot be empty </label>
+      </div>
+      <div style="display:flex">
+
+        <label class="label" for="comment">*Description</label>
+        <textarea class="long-input" required ngModel name="textArea" #textArea="ngModel" cols="30" rows="6" id="comment" placeholder="Write about your event, be creative"></textarea>
+        <label *ngIf="textArea.invalid && textArea.touched" class="invalid-user"> Description cannot be empty </label>
+      </div>
+      <div class="form-control">
+        <label class="label">Category</label>
+        <select class="select-valid long-input" [ngModel]="data.name" name="category" #category="ngModel" >
+            <option value="">
+                Choose...
+              </option>
+          <option *ngFor="let a of data">
+            {{a.name}}
+          </option>
+        </select>
+      </div>
+      <div class="form-control">
+
+        <label class="label">*Payment</label>
+        <input class="input-valid" required ngModel name="payment" #payment="ngModel" type="radio" checked="false" value="Free">Free Event
+        <input class="input-valid" required ngModel name="payment" #payment="ngModel" type="radio" checked="false" value="2">Paid Event
+        <label  *ngIf="payment.value == 2" >
+          <input required  class="input-valid" ngModel name="paid" #paid="ngModel" type="text" placeholder="Fee">
+          <label>$</label> 
+          <label *ngIf="paid.invalid && paid.touched" class="invalid-user"> Fee cannot be empty </label>
+        </label>
+      </div>
+      <div class="form-control">
+
+        <label class="label">Reward</label>
+        <input  class="input-valid small-input" ngModel name="reward" #reward="ngModel" type="text" placeholder="Number"> <label> reward points for attendance</label>
+      </div>
+    </div>
+    <div class="form-group">
+      <p>Coordinator</p>
+      <div class="form-control">
+
+        <label class="label" for="emp">Responsible *</label> 
+        <select class="select-valid dropdown long-input" name="responsible"
+        ngModel #responsible="ngModel">
+        <optgroup label="Me">
+          <option *ngIf="emp.length" class="dropdown-content" [value]="">
+             {{emp[0].name}} {{emp[0].lastname}}
+          </option>
+        </optgroup>
+        <optgroup label="Other">
+        <option *ngFor="let employee of emp; let i=index" [value]=""> 
+            {{employee.name}} {{employee.lastname}} 
+        </option>
+      </optgroup>
+      </select>
+    </div>
+    <div class="form-control">
+
+      <label class="label">Email</label>
+      <input  class="input-valid long-input" ngModel name="email" #email="ngModel" type="text" placeholder="Email">
+    </div>
+    </div>
+    <div class="form-group">
+      <p>When</p>
+      <div class="form-control">
+
+        <label class="label">Starts on</label>
+        <input  class="input-valid"  ngModel name="date" #date="ngModel" type="date"> at 
+        <input  class="input-valid" ngModel name="time" #time="ngModel" type="time" [value]="">
+        <input  class="input-valid" ngModel name="ref" #ref="ngModel" type="radio" checked="false" value="AM">AM
+        <input  class="input-valid" ngModel name="ref" #ref="ngModel" type="radio" checked="false" value="PM">PM
+      </div>
+      <label class="label">Duration</label>
+      <input  class="input-valid small-input" ngModel name="duration" #duration="ngModel" type="text" placeholder="Number"> hour
+    </div>
+<div>
+  <button [disabled]="Event.invalid" [class.has-error]="Event.invalid" type="submit" (click)="change()" class="btn">Publish Event</button>
+</div>
+
+</form>
+</div>
+</div>
+
+<div [hidden] = "submitted" class="cont">
+
+  <div class="success-container">
+    <div class="success">Success</div>
+    <div class="success-content"> Event has been created </div>
+  </div>
+  <div class="btn-container">
+    <button  type="submit" (click)="change()" class="btn">Back</button>
+  </div>
+    
+</div>
+
